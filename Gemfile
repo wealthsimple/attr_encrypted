@@ -1,3 +1,3 @@
-source 'https://rubygems.org'
+source 'https://reposerver.w10external.com/repository/gems'
 
 gemspec

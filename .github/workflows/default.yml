@@ -29,6 +29,7 @@ jobs:
         with:
           bundler-cache: true
         env:
+          BUNDLE_REPOSERVER__W10EXTERNAL__COM: ${{ secrets.BUNDLE_REPOSERVER__W10EXTERNAL__COM }}
           ACTIVERECORD: ${{ matrix.activerecord_version }}
 
       - name: Test
