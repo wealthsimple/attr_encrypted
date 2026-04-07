@@ -2,11 +2,6 @@
 
 require 'minitest/autorun'
 
-# Rails 4.0.x pins to an old minitest
-unless defined?(MiniTest::Test)
-  MiniTest::Test = MiniTest::Unit::TestCase
-end
-
 require 'active_record'
 require 'digest/sha2'
 require 'sequel'
