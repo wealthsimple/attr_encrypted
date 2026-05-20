@@ -1,5 +1,12 @@
 # attr_encrypted #
 
+## 3.2.0 ##
+* Changed: Ruby minimum version raised to 3.4.x.
+* Changed: CI test matrix updated to ActiveRecord 7.2 and 8.1. ActiveRecord 6.x is no longer included in the test matrix and is not actively supported.
+* Fixed: Removed Rails 4.0.x minitest compatibility shim that caused a `NameError` on modern minitest.
+* Fixed: Guarded `ActiveSupport::Deprecation` calls that were removed in Rails 7.1+.
+* Fixed: Replaced `stub` usage in tests with `define_singleton_method` for minitest 6 compatibility.
+
 ## 3.1.0 ##
 * Added: Abitilty to encrypt empty values. (@tamird)
 * Added: MIT license

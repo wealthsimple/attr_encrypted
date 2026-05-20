@@ -482,9 +482,8 @@ class AttrEncryptedTest < Minitest::Test
   def test_should_not_by_default_generate_key_when_attribute_is_empty
     user = User.new
     calls = 0
-    user.stub(:secret_key, lambda { calls += 1; SECRET_KEY }) do
-      user.ssn
-    end
+    user.define_singleton_method(:secret_key) { calls += 1; SECRET_KEY }
+    user.ssn
     assert_equal 0, calls
   end
 end

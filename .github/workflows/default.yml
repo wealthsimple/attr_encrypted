@@ -13,19 +13,19 @@ jobs:
   preflight_check:
     name: Preflight Check
     runs-on: ubuntu-latest
-    # do a matrix for ACTIVERECORD_VERSION of 6.1 and 7.0
+    # do a matrix for ACTIVERECORD_VERSION of 7.2 and 8.1
     strategy:
       matrix:
         activerecord_version:
-          - 6.1
-          - 7.0
+          - 7.2
+          - 8.1
     steps:
       # Need to fetch all refs, so we can check if the version has been bumped
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@97ecb7b512899eb71ab1bf2310a624c6f1589ac6 # v1.308.0
         with:
           bundler-cache: true
         env:
