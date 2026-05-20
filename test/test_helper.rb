@@ -2,15 +2,10 @@
 
 require 'minitest/autorun'
 
-# Rails 4.0.x pins to an old minitest
-unless defined?(MiniTest::Test)
-  MiniTest::Test = MiniTest::Unit::TestCase
-end
-
 require 'active_record'
 require 'digest/sha2'
 require 'sequel'
-ActiveSupport::Deprecation.behavior = :raise
+ActiveSupport::Deprecation.behavior = :raise if defined?(ActiveSupport::Deprecation) && ActiveSupport::Deprecation.respond_to?(:behavior=)
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $:.unshift(File.dirname(__FILE__))
